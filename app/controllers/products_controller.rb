@@ -19,9 +19,6 @@ class ProductsController < ApplicationController
 
    	def edit
    		@product = Product.find(params[:id])
-   		puts '****************************************************'
-   		puts @product.to_json
-   		puts '****************************************************'
    	end
 
    	def update

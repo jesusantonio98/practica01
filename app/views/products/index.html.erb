@@ -11,28 +11,36 @@
 </div>
 
 
-<H1>listado de productos</H1>
+<div class="container">
+	<H1>listado de productos</H1>
 
-<%= link_to "crear nuevo producto", products_new_path %>
-<table>
-	<tr>
-		<thead>
-			<th>nombre</th>
-			<th>descripcion</th>
-			<th>precio</th>
-		</thead>
-	</tr>
+	<%= link_to "crear nuevo producto", products_new_path %>
+	<table class="table table-bordered">
+		<tr>
+			<thead>
+				<th>nombre</th>
+				<th>descripcion</th>
+				<th>precio</th>
+			</thead>
+		</tr>
 
-	<% @products.each do |product| %>
-	<tr>
-		<td><%= product.name %></td>
-		<td><%= product.description %></td>
-		<td><%= product.price %></td>
-		<td>
-			<%= link_to "editar", edit_product_path(product) %>
-			<%= link_to "eliminar",product, method: :delete, data: { confirm: "deseas eliminar el producto?"}  %>
-			</td>
-	</tr>
-	<% end %>
-	
-</table>
+		<% @products.each do |product| %>
+		<tr>
+			<td><%= product.name %></td>
+			<td><%= product.description %></td>
+			<td><%= product.price %></td>
+			<td>
+				<%= link_to "editar", edit_product_path(product) %>
+				<%= link_to "eliminar",product, method: :delete, data: { confirm: "deseas eliminar el producto?"}  %>
+				</td>
+		</tr>
+		<% end %>
+		
+	</table>
+
+	<div class="card card-info">
+		<div class="card-header">titulo</div>
+		<div class="card-body">cuerpo</div>
+		<div class="card-footer">pies</div>
+	</div>
+</div>
