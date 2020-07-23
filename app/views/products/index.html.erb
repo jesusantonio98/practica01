@@ -1,0 +1,38 @@
+<% var01 = 'npmbre_factura' %>
+<div class="container">
+	<div class="row" style="border: 1px solid red">
+		<div class="col-md-8" style="border: 1px solid blue">
+			<%= var01 %>
+		</div>
+		<div class="col-md-4" style="border: 1px solid blue">
+			<%= var01 %>
+		</div>
+	</div>
+</div>
+
+
+<H1>listado de productos</H1>
+
+<%= link_to "crear nuevo producto", products_new_path %>
+<table>
+	<tr>
+		<thead>
+			<th>nombre</th>
+			<th>descripcion</th>
+			<th>precio</th>
+		</thead>
+	</tr>
+
+	<% @products.each do |product| %>
+	<tr>
+		<td><%= product.name %></td>
+		<td><%= product.description %></td>
+		<td><%= product.price %></td>
+		<td>
+			<%= link_to "editar", edit_product_path(product) %>
+			<%= link_to "eliminar",product, method: :delete, data: { confirm: "deseas eliminar el producto?"}  %>
+			</td>
+	</tr>
+	<% end %>
+	
+</table>
